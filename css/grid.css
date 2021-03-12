@@ -1,0 +1,223 @@
+:root {
+    --fond: #0D1436;
+    --special: #16FFE2;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+    display: grid;
+    position: relative;
+    grid-template-rows: 100px 300px repeat(2, auto);
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--fond);
+    overflow: hidden;
+}
+
+.header {
+    display: flex;
+    position: relative;
+    place-content: flex-end center;
+    width: 100%;
+}
+
+.icon-dots {
+    position: absolute;
+    height: 30px;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.title {
+    color: #16FFE2;
+    text-shadow: .5px .5px black, 1px 1px black, 1.1px 1.1px #16FFE2aa, 1.2px 1.2px #16FFE299, 1.3px 1.3px #16FFE288, 1.4px 1.4px #16FFE277, 1.5px 1.5px #16FFE266, 1.6px 1.6px #16FFE255, 2px 2px #16FFE244;
+    font-size: 4rem;
+    filter: blur(.15px);
+    display: flex;
+    position: relative;
+    top: 30px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    width: auto;
+}
+
+.cards::-webkit-scrollbar {
+    display: none;
+}
+
+.cards div {
+    min-width: 220px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    display: flex;
+    place-content: center center;
+    box-shadow: 10px 10px 40px 10px black,
+        -10px -10px 40px #16FFE2aa;
+    border: double 10px transparent;
+    background-image: url('../assets/img/a7x.jpg'), radial-gradient(circle at top left, var(--special) 40%, black);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background-size: cover;
+    margin-left: 20px;
+    scroll-snap-align: center;
+}
+
+.song {
+    width: 100%;
+}
+
+.song-name {
+    font-size: 1.4rem;
+    display: flex;
+    place-content: center;
+    color: var(--special);
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    display: flex;
+    flex-direction: row;
+    place-content: center space-evenly;
+    font-size: 1.3rem;
+    color: var(--special);
+}
+
+.bar {
+    display: flex;
+    position: relative;
+    top: 3px;
+    height: 10px;
+    background-color: black;
+    box-shadow: 0px 0px 5px 0px #16FFE2aa;
+    border-radius: 10px;
+    min-width: 50%;
+    width: 60%;
+}
+
+.bar::before {
+    content: '';
+    width: 45%;
+    height: 10px;
+    border-radius: 10px;
+    background-color: var(--special);
+    box-shadow: -3px 0px 15px 0px #16FFE2;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.buttons div {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    place-content: center center;
+    box-shadow: 3px 3px 20px 10px black,
+        -3px -3px 20px #16FFE2;
+    border: double 5px transparent;
+    background-image: linear-gradient(var(--fond), var(--fond)), radial-gradient(circle at top left, var(--special) 40%, black);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background-size: cover;
+    scroll-snap-align: center;
+    opacity: .8;
+    cursor: pointer;
+}
+
+.buttons div:hover {
+    opacity: 1;
+}
+
+.bucle img {
+    padding: 7px 15px 7px 17px;
+}
+
+.previous img {
+    padding: 7px 15px 7px 15px;
+}
+
+.buttons .play {
+    min-width: 70px;
+    width: 70px;
+    height: 70px;
+}
+
+.play img {
+    padding: 10px 10px 10px 20px;
+}
+
+.next img {
+    padding: 7px 15px 7px 15px;
+}
+
+.shift img {
+    padding: 6px 12px 6px 14px;
+}
+
+
+.buttons div:last-child,
+.buttons div:first-child {
+    display: flex;
+    position: relative;
+    top: -10px;
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        display: grid;
+        position: relative;
+        grid-template-rows: 100px repeat(3, auto);
+        height: 100vh;
+        width: 100vw;
+        background-color: var(--fond);
+        overflow: hidden;
+    }
+
+    .cards div {
+        display: none;
+    }
+
+    .cards .center {
+        display: flex;
+        width: 50vh;
+        height: 50vh;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .progress-bar {
+        width: 80%;
+        margin: auto;
+    }
+}
