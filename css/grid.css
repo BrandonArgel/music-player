@@ -133,6 +133,8 @@ html {
     width: 100%;
     max-width: 500px;
     margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .buttons div {
@@ -192,11 +194,11 @@ html {
     top: -10px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 425px) {
     .wrapper {
         display: grid;
         position: relative;
-        grid-template-rows: 100px repeat(3, auto);
+        grid-template-rows: 80px repeat(3, auto);
         height: 100vh;
         width: 100vw;
         background-color: var(--fond);
