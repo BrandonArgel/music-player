@@ -49,6 +49,7 @@ html {
     display: flex;
     position: relative;
     top: 30px;
+    letter-spacing: 2px;
 }
 
 .cards {
@@ -74,7 +75,7 @@ html {
     display: flex;
     place-content: center center;
     box-shadow: 10px 10px 40px 10px black,
-        -10px -10px 40px #16FFE2aa;
+        -10px -10px 40px var(--special);
     border: double 10px transparent;
     background-image: url('../assets/img/a7x.jpg'), radial-gradient(circle at top left, var(--special) 40%, black);
     background-origin: border-box;
@@ -94,6 +95,7 @@ html {
     place-content: center;
     color: var(--special);
     margin-bottom: 20px;
+    text-shadow: 1px 1px black, 1.2px 1.2px var(--special);
 }
 
 .progress-bar {
@@ -101,6 +103,7 @@ html {
     flex-direction: row;
     place-content: center space-evenly;
     font-size: 1.3rem;
+    font-weight: bold;
     color: var(--special);
 }
 
@@ -137,35 +140,47 @@ html {
     margin-top: 20px;
 }
 
-.buttons div {
+.buttons div:not(.play) {
     min-width: 40px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     display: flex;
     place-content: center center;
-    box-shadow: 3px 3px 20px 10px black,
-        -3px -3px 20px #16FFE2;
+    border: double 3px transparent;
+    background-image: linear-gradient(var(--fond), var(--fond)), radial-gradient(circle at top left, var(--special) 40%, black);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    cursor: pointer;
+}
+
+.buttons div.play {
+    border-radius: 50%;
+    display: flex;
+    place-content: center center;
     border: double 5px transparent;
     background-image: linear-gradient(var(--fond), var(--fond)), radial-gradient(circle at top left, var(--special) 40%, black);
     background-origin: border-box;
     background-clip: content-box, border-box;
-    background-size: cover;
-    scroll-snap-align: center;
-    opacity: .8;
     cursor: pointer;
 }
 
 .buttons div:hover {
     opacity: 1;
+    box-shadow: 3px 3px 20px black,
+        -3px -3px 20px #16FFE2;
+}
+
+.buttons div:hover:not(.play) {
+    cursor: not-allowed;
 }
 
 .bucle img {
-    padding: 7px 15px 7px 17px;
+    padding: 9px 15px 9px 17px;
 }
 
 .previous img {
-    padding: 7px 15px 7px 15px;
+    padding: 9px 15px 9px 15px;
 }
 
 .buttons .play {
@@ -179,11 +194,11 @@ html {
 }
 
 .next img {
-    padding: 7px 15px 7px 15px;
+    padding: 9px 15px 9px 15px;
 }
 
 .shift img {
-    padding: 6px 12px 6px 14px;
+    padding: 7px 12px 7px 14px;
 }
 
 
