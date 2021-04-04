@@ -2,12 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music Player</title>
     <link rel="stylesheet" href="./css/grid.css" />
+    <link rel="shortcut icon" href="#">
   </head>
   <body>
+    <audio id="audio" src="./Avenged Sevenfold - Dear God.m4a" ontimeupdate="updateProgress();"></audio>
+    <!-- <div id="playList"></div> -->
     <div class="wrapper">
       <header class="header">
         <img class="icon-dots" src="./assets/svg/dots.svg" alt="Icon dots" />
@@ -24,18 +26,31 @@
           <h2>Dear god - Avenged Sevenfold</h2>
         </div>
         <div class="progress-bar">
-          <div class="start">2:54</div>
-          <div class="bar"></div>
-          <div class="end">6:21</div>
+          <div id="start" class="start"></div>
+          <!-- <div class="bar"></div> -->
+          <progress id="progress" value="0" max="100"></progress>
+          <div id="end" class="end"></div>
         </div>
       </section>
       <footer class="buttons">
-          <div class="bucle"><img src="./assets/svg/btn-bucle.svg" alt="Bucle"></div>
-          <div class="previous"><img src="./assets/svg/btn-previous.svg" alt="Previous"></div>
-          <div class="play"><img src="./assets/svg/btn-play.svg" alt="Play"></div>
-          <div class="next"><img src="./assets/svg/btn-next.svg" alt="Next"></div>
-          <div class="shift"><img src="./assets/svg/btn-shift.svg" alt="Shift"></div>
+        <div class="bucle">
+          <img src="./assets/svg/btn-bucle.svg" alt="Bucle" />
+        </div>
+        <div class="previous">
+          <img src="./assets/svg/btn-previous.svg" alt="Previous" />
+        </div>
+        <div class="play" id="boton">
+          <btn id="play-pause" class="play-pause"></btn>
+        </div>
+        <div class="next">
+          <img src="./assets/svg/btn-next.svg" alt="Next" />
+        </div>
+        <div class="shift">
+          <img src="./assets/svg/btn-shift.svg" alt="Shift" />
+        </div>
       </footer>
     </div>
+
+    <script src="./js/main.js"></script>
   </body>
 </html>
