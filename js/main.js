@@ -11,7 +11,7 @@ const close = document.querySelector(".close");
 const volume = document.getElementById("volume");
 
 // Song titles
-const songs = ["Dear God", "A little Piece Of Heaven", "Seize The Day"];
+const songs = ["Dear God", "A little Piece Of Heaven", "Seize The Day", "Afterlife", "MIA", "So Far Away", "Until The End"];
 
 // Keep track of songs
 let songIndex = 0;
