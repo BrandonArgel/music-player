@@ -152,7 +152,6 @@ html {
 .buttons {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-evenly;
     width: 100%;
     max-width: 500px;
@@ -530,7 +529,7 @@ input[type=range]:focus::-ms-fill-upper {
     filter: brightness(0.4);
 }
 
-@media (orientation: landscape) and (max-width: 1023px){
+@media (orientation: landscape) and (max-width: 768px){
     .wrapper {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 0;
