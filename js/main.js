@@ -9,7 +9,7 @@ const aside = document.getElementById("aside");
 const body = document.querySelector("body");
 
 // Song titles
-const songs = ["Dear_God", "A_little_Piece_Of_Heaven", "Seize_The_Day"];
+const songs = ["Dear God", "A little Piece Of Heaven", "Seize The Day"];
 
 // Keep track of songs
 let songIndex = 0;
