@@ -359,7 +359,8 @@ progress::-moz-progress-bar {
 #volume {
     margin: 10px auto 20px;
     cursor: pointer;
-    width: 50%;
+    min-width: 130px;
+    width: 80%;
 }
 
 input[type=range] {
@@ -527,4 +528,47 @@ input[type=range]:focus::-ms-fill-upper {
 
 .filter {
     filter: brightness(0.4);
+}
+
+@media (orientation: landscape) and (max-width: 1023px){
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 0;
+    }
+
+    .header {
+        grid-column: 2;
+        grid-row: 1;
+        justify-content: flex-start;
+        height: 100px;
+        width: 100%;
+    }
+    
+    .cards {
+        grid-column: 1;
+        grid-row: 2;
+        background-color: #0D1436;
+    }
+
+    .cards .center {
+        height: 250px;
+        width: 250px;
+        min-width: 200px;
+        min-height: 200px;
+    }
+
+    .buttons {
+        position: relative;
+        margin-top: auto;
+        grid-column: 2;
+        grid-row: 2;
+        height: auto;
+    }
+
+    .song {
+        height: 100px;
+        grid-column: 2;
+        grid-row: 2;
+        margin: auto 0 100px;
+    }
 }
