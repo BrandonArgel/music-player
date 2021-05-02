@@ -5,14 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music Player</title>
     <link rel="stylesheet" href="./css/grid.css" />
-    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="#" />
   </head>
   <body>
-    <audio id="audio" src="./Avenged Sevenfold - Dear God.m4a" ontimeupdate="updateProgress();"></audio>
-    <!-- <div id="playList"></div> -->
+    <audio
+      id="audio"
+      src="./assets/audio/Dear God.m4a"
+      ontimeupdate="updateProgress();"
+    ></audio>
+    <aside id="aside" class="aside">
+      <div class="close">x</div>
+      <div class="aside-container">
+        Volumen:
+        <progress id="volumen" value="0.1" min="0" max="1"></progress>
+      </div>
+    </aside>
     <div class="wrapper">
       <header class="header">
-        <img class="icon-dots" src="./assets/svg/dots.svg" alt="Icon dots" />
+        <img
+          id="config"
+          class="icon-dots"
+          src="./assets/svg/dots.svg"
+          alt="Icon dots"
+        />
         <h1 class="title">Playing now!</h1>
       </header>
 
@@ -23,13 +38,13 @@
       </section>
       <section class="song">
         <div class="song-name">
-          <h2>Dear god - Avenged Sevenfold</h2>
+          <h2 id="title">Dear god - Avenged Sevenfold</h2>
         </div>
         <div class="progress-bar">
-          <div id="start" class="start"></div>
+          <div id="start" class="start">0:00</div>
           <!-- <div class="bar"></div> -->
           <progress id="progress" value="0" max="100"></progress>
-          <div id="end" class="end"></div>
+          <div id="end" class="end">0:00</div>
         </div>
       </section>
       <footer class="buttons">

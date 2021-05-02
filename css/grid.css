@@ -28,35 +28,37 @@ html {
 
 .header {
     display: flex;
-    position: relative;
     place-content: flex-end center;
-    width: 100%;
+    width: 80%;
+    justify-self: center;
 }
 
 .icon-dots {
     position: absolute;
-    height: 30px;
-    right: 20px;
+    height: 50px;
+    right: 0px;
     top: 20px;
-    cursor: pointer;
+    cursor: not-allowed;
+    padding: 5px;
+    padding-inline: 20px;
 }
 
-#playList{
+#playList {
     display: flex;
     position: absolute;
     z-index: 1;
-	background: black;
-	border-radius: 10px;
-	text-align: left;
-	opacity: 0.8;
-	color: var(--special);
+    background: black;
+    border-radius: 10px;
+    text-align: left;
+    opacity: 0.8;
+    color: var(--special);
     font-size: 2rem;
 }
 
 .title {
     color: #16FFE2;
     text-shadow: .5px .5px black, 1px 1px black, 1.1px 1.1px #16FFE2aa, 1.2px 1.2px #16FFE299, 1.3px 1.3px #16FFE288, 1.4px 1.4px #16FFE277, 1.5px 1.5px #16FFE266, 1.6px 1.6px #16FFE255, 2px 2px #16FFE244;
-    font-size: 4rem;
+    font-size: 3.5rem;
     filter: blur(.15px);
     display: flex;
     position: relative;
@@ -108,6 +110,7 @@ html {
     color: var(--special);
     margin-bottom: 20px;
     text-shadow: 1px 1px black, 1.2px 1.2px var(--special);
+    text-align: center;
 }
 
 .progress-bar {
@@ -117,6 +120,12 @@ html {
     font-size: 1.3rem;
     font-weight: bold;
     color: var(--special);
+}
+
+.progress-bar div {
+    margin-inline: 5px;
+    display: flex;
+    align-items: center;
 }
 
 .bar {
@@ -181,10 +190,6 @@ html {
     opacity: 1;
     box-shadow: 3px 3px 20px black,
         -3px -3px 20px #16FFE2;
-}
-
-.buttons div:hover:not(.play) {
-    cursor: not-allowed;
 }
 
 .bucle img {
@@ -274,14 +279,33 @@ progress::-webkit-progress-value {
 progress {
     border-radius: 10px;
 }
+
 progress::-webkit-progress-bar {
     border-radius: 10px;
 }
+
 progress::-webkit-progress-value {
     border-radius: 10px;
 }
+
 progress::-moz-progress-bar {
     border-radius: 10px;
+}
+
+.aside {
+    display: flex;
+    position: fixed;
+    width: 50vw;
+    height: 100vh;
+    max-width: 300px;
+    background-color: blueviolet;
+    top: 0;
+    right: -100%;
+    z-index: 1;
+}
+
+.aside-toggle {
+    right: 0;
 }
 
 @media screen and (min-width: 425px) {
@@ -295,14 +319,18 @@ progress::-moz-progress-bar {
         overflow: hidden;
     }
 
+    .cards {
+        overflow: visible;
+    }
+
     .cards div {
         display: none;
     }
 
     .cards .center {
         display: flex;
-        width: 50vh;
-        height: 50vh;
+        width: 40vh;
+        height: 40vh;
         margin: auto;
         margin-top: 30px;
         margin-bottom: 30px;
@@ -313,4 +341,31 @@ progress::-moz-progress-bar {
         margin: auto;
         align-items: center;
     }
+
+    .progress-bar div {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .title {
+        font-size: 7rem;
+    }
+
+    #progress {
+        height: 20px;
+    }
+
+    .progress-bar div {
+        font-size: 2rem;
+    }
+
+    #title {
+        font-size: 3.5rem;
+    }
+}
+
+.btn-active {
+    box-shadow: 3px 3px 20px black,
+        -3px -3px 20px #16FFE2;
 }
