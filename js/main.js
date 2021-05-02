@@ -20,7 +20,7 @@ loadSong(songs[songIndex]);
 // Update song details
 function loadSong(song) {
   title.innerText = `Avenged Sevenfold - ${song}`;
-  audio.src = `../assets/musica/${song}.m4a`;
+  audio.src = `../assets/musica/${song}.mp3`;
 }
 
 //Event listeners
