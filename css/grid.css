@@ -154,7 +154,7 @@ html {
     max-width: 500px;
     margin: auto;
     margin-bottom: 20px;
-    margin-top: 0px;
+    margin-top: 50px;
 }
 
 .buttons div:not(.play) {
