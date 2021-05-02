@@ -8,64 +8,78 @@
     <link rel="shortcut icon" href="#" />
   </head>
   <body>
-    <audio
-      id="audio"
-      src="https://brandonargel.github.io/music_player/Dear God.m4a"
-      ontimeupdate="updateProgress();"
-    ></audio>
-    <!-- Por alguna extraña razón no detectaba las canciones por referencia a la carpeta en la que estaba, por eso utilicé sus URLs -->
     <aside id="aside" class="aside">
       <div class="close">x</div>
       <div class="aside-container">
-        Volumen:
-        <progress id="volumen" value="0.1" min="0" max="1"></progress>
+        <p id="vol" class="vol">Volume</p>
+        <input
+          type="range"
+          name="volumen"
+          id="volume"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+        />
+        <p>Add to favorites</p>
+        <p>Add to playlist</p>
+        <p>Share <span class="heart">❤</span></p>
       </div>
     </aside>
-    <div class="wrapper">
-      <header class="header">
-        <img
-          id="config"
-          class="icon-dots"
-          src="./assets/svg/dots.svg"
-          alt="Icon dots"
-        />
-        <h1 class="title">Playing now!</h1>
-      </header>
+    <main>
+      <audio
+        id="audio"
+        src="https://brandonargel.github.io/music_player/Dear God.m4a"
+        ontimeupdate="updateProgress();"
+      ></audio>
+      <!-- Por alguna extraña razón no detectaba las canciones por referencia a la carpeta en la que estan, por eso utilicé sus URLs -->
 
-      <section class="cards">
-        <div></div>
-        <div class="center"></div>
-        <div></div>
-      </section>
-      <section class="song">
-        <div class="song-name">
-          <h2 id="title">Dear god - Avenged Sevenfold</h2>
-        </div>
-        <div class="progress-bar">
-          <div id="start" class="start">0:00</div>
-          <!-- <div class="bar"></div> -->
-          <progress id="progress" value="0" max="100"></progress>
-          <div id="end" class="end">0:00</div>
-        </div>
-      </section>
-      <footer class="buttons">
-        <div class="bucle">
-          <img src="./assets/svg/btn-bucle.svg" alt="Bucle" />
-        </div>
-        <div class="previous">
-          <img src="./assets/svg/btn-previous.svg" alt="Previous" />
-        </div>
-        <div class="play" id="boton">
-          <btn id="play-pause" class="play-pause"></btn>
-        </div>
-        <div class="next">
-          <img src="./assets/svg/btn-next.svg" alt="Next" />
-        </div>
-        <div class="shift">
-          <img src="./assets/svg/btn-shift.svg" alt="Shift" />
-        </div>
-      </footer>
-    </div>
+      <div class="wrapper">
+        <header class="header">
+          <img
+            id="config"
+            class="icon-dots"
+            src="./assets/svg/dots.svg"
+            alt="Icon dots"
+          />
+          <h1 class="title">Playing now!</h1>
+        </header>
+
+        <section class="cards">
+          <div></div>
+          <div class="center"></div>
+          <div></div>
+        </section>
+        <section class="song">
+          <div class="song-name">
+            <h2 id="title">Dear god - Avenged Sevenfold</h2>
+          </div>
+          <div class="progress-bar">
+            <div id="start" class="start">0:00</div>
+            <!-- <div class="bar"></div> -->
+            <progress id="progress" value="0" max="100"></progress>
+            <div id="end" class="end">0:00</div>
+          </div>
+        </section>
+        <footer class="buttons">
+          <div class="bucle">
+            <img src="./assets/svg/btn-bucle.svg" alt="Bucle" />
+          </div>
+          <div class="previous">
+            <img src="./assets/svg/btn-previous.svg" alt="Previous" />
+          </div>
+          <div class="play" id="boton">
+            <btn id="play-pause" class="play-pause"></btn>
+          </div>
+          <div class="next">
+            <img src="./assets/svg/btn-next.svg" alt="Next" />
+          </div>
+          <div class="shift">
+            <img src="./assets/svg/btn-shift.svg" alt="Shift" />
+          </div>
+        </footer>
+      </div>
+    </main>
 
     <script src="./js/main.js"></script>
   </body>

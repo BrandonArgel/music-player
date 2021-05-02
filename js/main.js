@@ -6,7 +6,9 @@ const bucleBtn = document.querySelector(".bucle");
 const audio = document.getElementById("audio");
 const config = document.getElementById("config");
 const aside = document.getElementById("aside");
-const body = document.querySelector("body");
+const main = document.querySelector("main");
+const close = document.querySelector(".close");
+const volume = document.getElementById("volume");
 
 // Song titles
 const songs = ["Dear God", "A little Piece Of Heaven", "Seize The Day"];
@@ -24,7 +26,6 @@ function loadSong(song) {
 }
 
 //Event listeners
-audio.volume = 0.1;
 var boton = document.getElementById("boton");
 
 const updateProgress = () => {
@@ -69,7 +70,11 @@ boton.addEventListener("click", function () {
 });
 
 function playSong() {
-  audio.play();
+  // The play method is asynchronous, the setTimeout helps to avoid an error
+  setTimeout(function () {
+    audio.play();
+  }, 0);
+
   document.getElementById("play-pause").classList.add("button-play-pause");
   document.getElementById("play-pause").classList.remove("play-pause");
 }
@@ -94,6 +99,10 @@ function prevSong() {
 }
 
 function nextSong() {
+  if (shiftBtn.classList.contains("btn-active")) {
+    shiftSong();
+  }
+
   songIndex++;
   if (songIndex > songs.length - 1) {
     songIndex = 0;
@@ -159,6 +168,31 @@ function adelantar(e) {
 }
 
 // Drop down side panel
-config.addEventListener("click", () => {
+config.addEventListener(
+  "click",
+  () => {
+    setTimeout(() => {
+      aside.classList.toggle("aside-toggle");
+      main.classList.toggle("filter");
+    });
+  },
+  0
+);
+
+close.addEventListener("click", () => {
   aside.classList.toggle("aside-toggle");
+  main.classList.toggle("filter");
 });
+
+main.addEventListener("click", () => {
+  if (aside.classList.contains("aside-toggle")) {
+    aside.classList.remove("aside-toggle");
+    main.classList.remove("filter");
+  }
+});
+
+// Volume
+volume.oninput = (e) => {
+  const vol = e.target.value;
+  audio.volume = vol;
+};

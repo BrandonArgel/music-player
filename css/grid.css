@@ -38,7 +38,7 @@ html {
     height: 50px;
     right: 0px;
     top: 20px;
-    cursor: not-allowed;
+    cursor: pointer;
     padding: 5px;
     padding-inline: 20px;
 }
@@ -297,15 +297,170 @@ progress::-moz-progress-bar {
     position: fixed;
     width: 50vw;
     height: 100vh;
-    max-width: 300px;
-    background-color: blueviolet;
+    max-width: 500px;
+    background-color: var(--fond);
     top: 0;
     right: -100%;
     z-index: 1;
+    flex-direction: column;
+    font-size: 2rem;
+    font-weight: bold;
+    align-items: center;
+    color: var(--special);
+    box-shadow: -10px 0 10px 10px #00000088, -20px 0 10px 10px #00000044;
+    transition: all .3s;
+    text-align: center;
 }
 
 .aside-toggle {
     right: 0;
+}
+
+.aside-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.aside-container p {
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+.aside-container p:hover:not(.vol) {
+    background-color: #0D2456;
+}
+
+#vol {
+    cursor: default;
+}
+
+.heart {
+    color: red;
+}
+
+.close {
+    display: flex;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    align-self: flex-end;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#volume {
+    margin: 10px auto 20px;
+    cursor: pointer;
+    width: 50%;
+}
+
+input[type=range] {
+    width: 100%;
+    margin: 5px 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background: #000000;
+    border: 1px solid #16ffe2;
+    border-radius: 25px;
+    width: 100%;
+    height: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    margin-top: -6px;
+    width: 20px;
+    height: 20px;
+    background: #16ffe2;
+    border: 0;
+    border-radius: 50px;
+    -webkit-appearance: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #0d0d0d;
+}
+
+input[type=range]::-moz-range-track {
+    background: #000000;
+    border: 1px solid #16ffe2;
+    border-radius: 25px;
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #16ffe2;
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    border-width: 5px 0;
+    color: transparent;
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #000000;
+    border: 1px solid #16ffe2;
+    border-radius: 50px;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #000000;
+    border: 1px solid #16ffe2;
+    border-radius: 50px;
+}
+
+input[type=range]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #16ffe2;
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 0px;
+    /*Needed to keep the Edge thumb centred*/
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #000000;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #0d0d0d;
+}
+
+@supports (-ms-ime-align:auto) {
+
+    /* Pre-Chromium Edge only styles, selector taken from hhttps://stackoverflow.com/a/32202953/7077589 */
+    input[type=range] {
+        margin: 0;
+        /*Edge starts the margin from the thumb, not the track as other browsers do*/
+    }
 }
 
 @media screen and (min-width: 425px) {
@@ -349,7 +504,7 @@ progress::-moz-progress-bar {
 
 @media screen and (min-width: 1000px) {
     .title {
-        font-size: 7rem;
+        font-size: 5rem;
     }
 
     #progress {
@@ -368,4 +523,8 @@ progress::-moz-progress-bar {
 .btn-active {
     box-shadow: 3px 3px 20px black,
         -3px -3px 20px #16FFE2;
+}
+
+.filter {
+    filter: brightness(0.4);
 }
