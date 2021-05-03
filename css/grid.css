@@ -573,3 +573,13 @@ input[type=range]:focus::-ms-fill-upper {
         margin: auto 0 100px;
     }
 }
+
+@media (orientation: portrait) and (max-width: 400px){
+    .aside{
+        width: 100vw;
+        right: -110%;
+    }
+    .aside-toggle{
+        right: 0;
+    }
+}
