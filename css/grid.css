@@ -245,6 +245,10 @@ html {
     top: -10px;
 }
 
+.bucle:hover::after {
+    content: "Bucle";
+}
+
 #progress {
     width: 80%;
     margin: 10px;
