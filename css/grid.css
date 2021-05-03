@@ -148,6 +148,7 @@ html {
 
 .buttons {
     display: flex;
+    position: relative;
     flex-direction: row;
     justify-content: space-evenly;
     width: 100%;
@@ -244,9 +245,49 @@ html {
     position: relative;
     top: -10px;
 }
+.bucle:hover::before, .previous:hover::before, .next:hover::before, .shift:hover::before, .play:hover::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+    transform: rotate(45deg);
+    top: -25px;
+}
+
+.bucle:hover::after, .previous:hover::after, .next:hover::after, .shift:hover::after, .play:hover::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: #000000;
+    color: var(--special);
+    padding: 5px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 1.3rem;
+    border-radius: 10px;
+    top: -50px;
+}
 
 .bucle:hover::after {
     content: "Bucle";
+}
+
+.previous:hover::after {
+    content: "Previous";
+}
+
+.play:hover::after {
+    content: "Play / Pause";
+}
+
+.next:hover::after {
+    content: "Next";
+}
+
+.shift:hover::after {
+    content: "Shift";
 }
 
 #progress {
