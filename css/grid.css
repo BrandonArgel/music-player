@@ -258,11 +258,11 @@ html {
 .bucle:hover::after, .previous:hover::after, .next:hover::after, .shift:hover::after, .play:hover::after {
     content: "";
     position: absolute;
-    width: 100px;
+    width: auto;
     height: 20px;
     background-color: #000000;
     color: var(--special);
-    padding: 5px;
+    padding: 5px 10px;
     text-align: center;
     line-height: 20px;
     font-size: 1.3rem;
@@ -279,7 +279,7 @@ html {
 }
 
 .play:hover::after {
-    content: "Play / Pause";
+    content: "Play/Pause";
 }
 
 .next:hover::after {
