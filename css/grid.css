@@ -336,7 +336,6 @@ progress::-moz-progress-bar {
 
 .heart {
     color: red;
-    font-size: 3rem;
 }
 
 .credits {
@@ -571,6 +570,9 @@ input[type=range]:focus::-ms-fill-upper {
         grid-column: 2;
         grid-row: 2;
         margin: auto 0 100px;
+    }
+    .aside-container p {
+        padding: 10px 0;
     }
 }
 
