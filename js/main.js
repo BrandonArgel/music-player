@@ -33,10 +33,11 @@ const updateProgress = () => {
     let barra = document.getElementById("progress");
     barra.value = (audio.currentTime / audio.duration) * 100;
 
-    var duracionSegundos = audio.duration.toFixed(0);
-    dura = secondsToString(duracionSegundos);
+
     var actualSegundos = audio.currentTime.toFixed(0);
     actual = secondsToString(actualSegundos);
+    var duracionSegundos = audio.duration.toFixed(0) - actual;
+    dura = secondsToString(duracionSegundos);
 
     document.getElementById("start").innerText = actual;
     document.getElementById("end").innerText = dura;
