@@ -36,7 +36,7 @@ const updateProgress = () => {
 
     var actualSegundos = audio.currentTime.toFixed(0);
     actual = secondsToString(actualSegundos);
-    var duracionSegundos = audio.duration.toFixed(0) - actual;
+    var duracionSegundos = audio.duration.toFixed(0) - audio.currentTime.toFixed(0);
     dura = secondsToString(duracionSegundos);
 
     document.getElementById("start").innerText = actual;
