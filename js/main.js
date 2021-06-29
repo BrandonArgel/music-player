@@ -1,4 +1,5 @@
 const title = document.querySelector("#title");
+const cover = document.querySelector("#cover");
 const prevBtn = document.querySelector(".previous");
 const nextBtn = document.querySelector(".next");
 const shiftBtn = document.querySelector(".shift");
@@ -23,6 +24,7 @@ loadSong(songs[songIndex]);
 function loadSong(song) {
   title.innerText = `Avenged Sevenfold - ${song}`;
   audio.src = `/music_player/assets/audio/${song}.m4a`;
+  cover.src = `/music_player/assets/img/${song}.jpg`;
 }
 
 //Event listeners

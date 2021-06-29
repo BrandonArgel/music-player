@@ -22,7 +22,7 @@ html {
     grid-template-rows: 100px 300px repeat(2, auto);
     height: 100vh;
     width: 100vw;
-    background-color: var(--fond);
+    background: var(--fond);
     overflow: hidden;
 }
 
@@ -78,7 +78,7 @@ html {
     display: none;
 }
 
-.cards div {
+.cards img {
     min-width: 220px;
     width: 220px;
     height: 220px;
@@ -88,7 +88,7 @@ html {
     box-shadow: 10px 10px 25px 10px black,
         -10px -10px 25px var(--special);
     border: double 10px transparent;
-    background-image: url('../assets/img/a7x.jpg'), radial-gradient(circle at top left, var(--special) 40%, black);
+    background-image: linear-gradient(var(--fond), var(--fond)), radial-gradient(circle at top left, var(--special) 40%, black);
     background-origin: border-box;
     background-clip: content-box, border-box;
     background-size: cover;
@@ -156,6 +156,7 @@ html {
     margin: auto;
     margin-bottom: 20px;
     margin-top: 50px;
+    max-height: 50px;
 }
 
 .buttons div:not(.play) {
@@ -515,10 +516,9 @@ input[type=range]:focus::-ms-fill-upper {
     .wrapper {
         display: grid;
         position: relative;
-        grid-template-rows: 80px repeat(3, auto);
+        grid-template-rows: 80px minmax(250px, 1fr) 100px 150px;
         height: 100vh;
         width: 100vw;
-        background-color: var(--fond);
         overflow: hidden;
     }
 
@@ -608,6 +608,7 @@ input[type=range]:focus::-ms-fill-upper {
         grid-column: 2;
         grid-row: 2;
         height: auto;
+        margin-bottom: 20px;
     }
 
     .song {
