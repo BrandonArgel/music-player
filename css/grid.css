@@ -78,7 +78,7 @@ html {
     display: none;
 }
 
-.cards img {
+#cover {
     min-width: 220px;
     width: 220px;
     height: 220px;
